@@ -1,0 +1,14 @@
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+
+@mixin circular($radius) {
+  @include border-radius($radius);
+  width: $radius * 2;
+  height: $radius * 2;
+}
+
+

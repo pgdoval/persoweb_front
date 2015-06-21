@@ -1,0 +1,25 @@
+.contact-bar{
+  position: absolute;
+  height:8%;
+  width:100%;
+  background-color: #5D507D;
+  color: #fff;
+  
+  .contact-title{
+    position: relative;
+    width:30%;
+    height:100%;
+    text-align:center;
+    font-size: 3rem;
+    padding-top: 1.5%;
+  }
+}
+
+.footer{
+  position: absolute;
+  background-color: #5D507D;
+  top:92%;
+  height:8%;
+  width:100%;
+  
+}

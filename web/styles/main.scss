@@ -1,0 +1,296 @@
+/* Copyright (c) 2015, <your name>. All rights reserved. */
+/* Use of this source code is governed by a BSD-style */
+/* license that can be found in the LICENSE file. */
+
+/*
+ * Web Starter Kit
+ *
+ * Multi-screen layout styles for your page. Brought to you by the
+ * Web Starter Kit team.
+ *
+ */
+
+/*
+ * Visual Style Guide styles
+ * Remove if you prefer to use a CSS library, like Bootstrap
+ */
+@import 'components/components';
+
+$main-color: #363045;
+$contact-color: #9686BF;
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+
+@mixin circular($radius) {
+  @include border-radius($radius);
+  width: $radius * 2;
+  height: $radius * 2;
+}
+
+@mixin paint-icon($color) {
+  .main-icon{
+    border-color: $color;
+  }
+  .main-icon-title{
+    background-color: $color;
+  }
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  position: relative;
+  font-family: 'Roboto Condensed', Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  box-sizing: border-box;
+  background-color: $main-color;
+  min-height: 100%;
+}
+
+body.open {
+  overflow: hidden;
+}
+
+.main{
+  position:absolute;
+  top:8%;
+  width:98%;
+  left:1%;
+  height:84%;
+  display:inline;
+  background-image: url('../images/back.jpg');
+  background-size: 100%;
+  @include border-radius(50px);
+}
+
+
+
+.main-icon { 
+  @include circular(150px); 
+  border: 40px solid #040;
+  float:left;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  cursor:pointer;
+}
+ 
+.main-icon-title {
+  position:relative;
+  @include border-radius(10px);
+  background-color: #040;
+  width: 60%;
+  height: 18%;
+  line-height: 18%;
+  font-weight: bold;
+  color:#fff;
+  text-align:center;
+  font-size: 1.35rem;
+  top:100%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: inline-block;
+  span{
+    position:relative;
+    display: inline-block;
+    vertical-align: middle;
+    line-height: normal;
+    top: 50%;
+    transform: translateY(-50%); 
+  }
+}
+
+.main-icon-container{
+  float:left;
+  width:50%;
+  height:50%;
+  background-color: rgba(54,48,69,0.2);  
+}
+
+
+
+.contact-bar{
+  position: absolute;
+  height:8%;
+  width:100%;
+  background-color: $main-color;
+  color: #fff;
+  
+  .contact-title{
+    position: relative;
+    width:30%;
+    height:100%;
+    text-align:center;
+    font-size: 3rem;
+    padding-top: 1.5%;
+  }
+  
+  .contact-buttons{
+    position:relative;
+    background-color:$contact-color;
+    height:80%;
+    top:10%;
+    left:50%;
+    transform: translateX(-50%);
+    width:18%;
+    border:4px solid #776B96;
+    @include border-radius(20px);
+    .contact-button-container{
+      position:relative;
+      width:25%;
+      float:left;
+      height:100%;
+      
+      .contact-button{
+        position:relative;
+        @include border-radius(5px);
+        width:40px;
+        height:40px;
+        float:left;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%); 
+        cursor: pointer;
+        //cursor: hand;
+        &:hover{
+          opacity:0.7;
+        }
+
+  
+      }
+
+      
+      
+    }
+    
+  }
+  
+}
+
+.footer{
+  position: absolute;
+  background-color: $main-color;
+  top:92%;
+  height:8%;
+  width:100%;
+  
+  .footer-name{
+    position:relative;
+    top:50%;
+    left:50%;
+    transform: translateX(-50%) translateY(-50%); 
+    font-size: 1.5rem;
+    font-weight: bold;
+    color:#fff;
+    text-align:center;
+  }
+}
+
+
+.sidebar{
+  position:relative;
+  display:none;
+  float:right;
+  width:15%;
+  height:100%; 
+  .main-icon-container{
+    float:left;
+    width:100%;
+    height:20%;
+      
+    .main-icon { 
+      @include circular(75px); 
+      border-width: 20px;
+      float:left;
+      position: relative;
+      left: 50%;
+      transform: translateX(-50%);
+      opacity:0.5;
+      
+      .main-icon-title {
+        width: 100%;
+        height: 25%;
+        line-height: 25%;
+        font-size: 1rem;
+      }      
+    }
+    
+    &.selected {
+      .main-icon{
+        opacity:1;
+      }
+      
+    }
+  }
+  
+
+}
+
+.cv
+{
+  @include paint-icon(#A37B46);
+  .main-icon{
+    background-image: url('../images/cv.jpg');
+    background-size: 100%;
+  }
+}
+
+.blog{
+  @include paint-icon(#466EA3);
+  .main-icon{
+    background-image: url('../images/pen.png');
+    background-size: 100%;
+  }
+}
+
+.projects{
+  @include paint-icon(#46A34D);
+  .main-icon{
+    background-image: url('../images/project.png');
+    background-size: 100%;
+  }
+}
+
+.other{
+  @include paint-icon(#E68849);
+  .main-icon{
+    background-image: url('../images/ball.jpg');
+    background-size: 100%;
+  }
+}
+
+
+.twitter{
+  background-image: url('../images/twitter.png');
+  background-size: 100%;
+}
+
+.github{
+  background-image: url('../images/github.png');
+  background-size: 100%;
+}
+
+.slideshare{
+  background-image: url('../images/slideshare.png');
+  background-size: 100%;
+}
+
+.linkedin{
+  background-image: url('../images/linkedin.png');
+  background-size: 100%;
+}
+
+
+
