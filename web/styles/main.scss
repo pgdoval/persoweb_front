@@ -19,6 +19,11 @@
 $main-color: #363045;
 $contact-color: #9686BF;
 
+$color-cv:#A37B46;
+$color-blog:#466EA3;
+$color-projects:#46A34D;
+$color-other:#E68849;
+
 @mixin border-radius($radius) {
   -webkit-border-radius: $radius;
      -moz-border-radius: $radius;
@@ -117,6 +122,41 @@ body.open {
   width:50%;
   height:50%;
   background-color: rgba(54,48,69,0.2);  
+  
+    &.cv
+    {
+      @include paint-icon($color-cv);
+      .main-icon{
+        background-image: url('../images/cv.jpg');
+        background-size: 100%;
+      }
+    }
+    
+    &.blog{
+      @include paint-icon($color-blog);
+      .main-icon{
+        background-image: url('../images/pen.png');
+        background-size: 100%;
+      }
+    }
+    
+    &.projects{
+      @include paint-icon($color-projects);
+      .main-icon{
+        background-image: url('../images/project.png');
+        background-size: 100%;
+      }
+    }
+    
+    &.other{
+      @include paint-icon($color-other);
+      .main-icon{
+        background-image: url('../images/ball.jpg');
+        background-size: 100%;
+      }
+    }
+    
+  
 }
 
 
@@ -238,39 +278,6 @@ body.open {
 
 }
 
-.cv
-{
-  @include paint-icon(#A37B46);
-  .main-icon{
-    background-image: url('../images/cv.jpg');
-    background-size: 100%;
-  }
-}
-
-.blog{
-  @include paint-icon(#466EA3);
-  .main-icon{
-    background-image: url('../images/pen.png');
-    background-size: 100%;
-  }
-}
-
-.projects{
-  @include paint-icon(#46A34D);
-  .main-icon{
-    background-image: url('../images/project.png');
-    background-size: 100%;
-  }
-}
-
-.other{
-  @include paint-icon(#E68849);
-  .main-icon{
-    background-image: url('../images/ball.jpg');
-    background-size: 100%;
-  }
-}
-
 
 .twitter{
   background-image: url('../images/twitter.png');
@@ -292,5 +299,22 @@ body.open {
   background-size: 100%;
 }
 
+.invisible{
+  display:none;
+}
+
+.article{
+  position:relative;
+  width:90%;
+  background-color:#EDECBE;
+  height:90%;
+  top:5%;
+  left:5%;
+  @include border-radius(30px);
+  opacity:0.9;
+  border: 2px solid #000;
+  //overflow-y:scroll;
+  //margin-right:5%;
+}
 
 

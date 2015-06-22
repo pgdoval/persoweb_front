@@ -74,12 +74,13 @@ void createRightMenu(){
   {
     var barAnimation = new CssAnimation('width', "100%", desiredWidth);
     //var sidebarAnimation = new CssAnimation('display', "none", "inline-block");
+    querySelectorAll('.main .main-icon-container').style.display = "none";
       
     barAnimation.apply(querySelector(".main"), 
         duration: 500,
         onComplete: (){
           querySelector(".sidebar").style.display = "inline-block";
-          querySelectorAll('.main .main-icon').style.display = "none";
+          querySelector(".article").classes.remove("invisible");
         }
     );
     
