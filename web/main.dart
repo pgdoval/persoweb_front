@@ -73,6 +73,8 @@ void createRightMenu(){
   if(querySelector(".main").style.width != desiredWidth)
   {
     var barAnimation = new CssAnimation('width', "100%", desiredWidth);
+    var articleAnimation = new CssAnimation('opacity', 0, 1);
+        
     //var sidebarAnimation = new CssAnimation('display', "none", "inline-block");
     querySelectorAll('.main .main-icon-container').style.display = "none";
       
@@ -81,6 +83,8 @@ void createRightMenu(){
         onComplete: (){
           querySelector(".sidebar").style.display = "inline-block";
           querySelector(".article").classes.remove("invisible");
+          articleAnimation.apply(querySelector(".article"),
+              duration:100);
         }
     );
     

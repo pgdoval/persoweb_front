@@ -88,8 +88,8 @@ body.open {
 .main{
   position:absolute;
   top:8%;
-  width:98%;
-  left:1%;
+  width:94%;
+  left:3%;
   height:84%;
   display:inline;
   background-image: url('../images/back.jpg');
@@ -333,13 +333,12 @@ body.open {
 
 .article{
   position:relative;
-  width:90%;
-  background-color:#EDECBE;
-  height:90%;
-  top:5%;
-  left:5%;
+  width:100%;
+  background-color:rgba(237, 236, 190, 0.8);
+  opacity:0;
+  height:100%;
+
   @include border-radius(30px);
-  opacity:0.9;
   border: 2px solid #000;
   //overflow-y:scroll;
   //margin-right:5%;
